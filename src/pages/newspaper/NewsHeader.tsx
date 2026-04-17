@@ -1,5 +1,5 @@
 import Icon from "@/components/ui/icon";
-import { NAV_ITEMS, Section } from "./data";
+import { NAV_ITEMS, NEWSPAPER_NAME, NEWSPAPER_SLOGAN, Section } from "./data";
 
 interface NewsHeaderProps {
   activeSection: Section;
@@ -34,12 +34,12 @@ const NewsHeader = ({ activeSection, setActiveSection, mobileMenuOpen, setMobile
                 style={{ letterSpacing: '-0.02em' }}
                 onClick={() => setActiveSection('home')}
               >
-                Городской вестник
+                {NEWSPAPER_NAME}
               </h1>
               <div className="flex-1 newspaper-rule" />
             </div>
             <p className="font-cormorant italic text-base text-newspaper-muted tracking-wide">
-              Правда. Честность. Профессионализм.
+              {NEWSPAPER_SLOGAN}
             </p>
           </div>
 

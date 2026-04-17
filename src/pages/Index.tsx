@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Section, NAV_ITEMS, SECTION_TITLES } from "./newspaper/data";
+import { Section, NAV_ITEMS, SECTION_TITLES, NEWSPAPER_NAME } from "./newspaper/data";
 import NewsHeader from "./newspaper/NewsHeader";
 import NewsSections from "./newspaper/NewsSections";
 import NewsSidebar from "./newspaper/NewsSidebar";
@@ -64,7 +64,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 py-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="font-playfair text-2xl font-black mb-2">Городской вестник</h3>
+              <h3 className="font-playfair text-2xl font-black mb-2">{NEWSPAPER_NAME}</h3>
               <p className="font-ibm text-xs text-newspaper-paper/60 leading-relaxed">
                 Независимое городское издание. Освещаем жизнь города с 1998 года.
               </p>
@@ -93,7 +93,7 @@ const Index = () => {
             </div>
           </div>
           <div className="mt-8 pt-4 border-t border-newspaper-paper/20 font-ibm text-xs text-newspaper-paper/40 text-center">
-            © 2026 Городской вестник. Все права защищены.
+            © 2026 {NEWSPAPER_NAME}. Все права защищены.
           </div>
         </div>
       </footer>
