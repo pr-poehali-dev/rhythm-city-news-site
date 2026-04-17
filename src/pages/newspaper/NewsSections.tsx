@@ -42,7 +42,35 @@ export const HomeSection = () => {
       {featuredArticle && (
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-8">
           <div className="lg:col-span-3">
-            <ArticleCard article={featuredArticle} large />
+            {featuredArticle.body ? (
+              <article className="article-card group cursor-pointer">
+                {featuredArticle.image && (
+                  <div className="overflow-hidden mb-3">
+                    <img
+                      src={featuredArticle.image}
+                      alt={featuredArticle.title}
+                      className="w-full object-cover h-64 grayscale hover:grayscale-0 transition-all duration-500"
+                    />
+                  </div>
+                )}
+                <div className="category-badge mb-2 inline-block">{featuredArticle.categoryLabel}</div>
+                <h3 className="font-playfair font-bold leading-tight mb-3 text-2xl article-title">
+                  {featuredArticle.title}
+                </h3>
+                <div className="flex items-center gap-3 text-xs text-newspaper-muted font-ibm mb-4">
+                  <span>{featuredArticle.date}</span>
+                  <span className="newspaper-rule-thin border-l h-3 border-newspaper-border inline-block" />
+                  <span>{featuredArticle.author}</span>
+                </div>
+                <div className="column-text font-ibm text-sm text-newspaper-ink leading-relaxed">
+                  {featuredArticle.body.split('\n\n').map((para, i) => (
+                    <p key={i} className={`mb-3 ${i === 0 ? 'drop-cap' : ''}`}>{para}</p>
+                  ))}
+                </div>
+              </article>
+            ) : (
+              <ArticleCard article={featuredArticle} large />
+            )}
           </div>
           <div className="lg:col-span-2 flex flex-col gap-6">
             {secondaryArticles.map(a => <ArticleCard key={a.id} article={a} />)}
