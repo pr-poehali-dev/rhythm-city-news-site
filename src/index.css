@@ -101,6 +101,6 @@
   }
 
   .category-badge {
-    @apply font-ibm text-xs font-600 uppercase tracking-widest text-newspaper-accent border-b border-newspaper-accent pb-0.5;
+    @apply font-ibm text-xs font-semibold uppercase tracking-widest text-newspaper-accent border-b border-newspaper-accent pb-0.5;
   }
 }
